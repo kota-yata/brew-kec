@@ -8,6 +8,10 @@ class Kec < Formula
   depends_on "go" => :build
 
   def install
+    system "./configure", "--disable-debug",
+                          "--disable-dependency-tracking",
+                          "--disable-silent-rules",
+                          "--prefix=/usr/local/Cellar/kec/1.0.0"
     ENV['GOPATH'] = buildpath
     path = buildpath/"src/github.com/kota-yata/kec/"
     path.install buildpath.children
