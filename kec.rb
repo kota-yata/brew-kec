@@ -1,27 +1,11 @@
 class Kec < Formula
   desc "Image format extension converter. Only for jpg/png/gif image. Poor"
   homepage "https://github.com/kota-yata/kec"
-  url "https://github.com/kota-yata/kec/archive/1.0.0.tar.gz"
-  sha256 "9a569bae71ff0ce6a9fdc6e7e68a878480ed023997c5bd8ab3e54b5a22c46022"
+  url "https://github.com/kota-yata/kec/releases/download/1.0.1/kec"
+  sha256 "f1962237ad5d67f324b0b5d8ba2ef873fbac707225dda9fc8726fcf398f5eed1"
   license "BSD-2-Clause"
 
-  depends_on "go" => :build
-
   def install
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=/usr/local/Cellar/kec/1.0.0"
-    ENV['GOPATH'] = buildpath
-    path = buildpath/"src/github.com/kota-yata/kec/"
-    path.install buildpath.children
-    cd path do
-      system 'go', 'build'
-      bin.install 'kec'
-  end
-  end
-
-  test do
-    system "true"
+    bin.install "kec"
   end
 end
