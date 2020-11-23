@@ -5,9 +5,7 @@ class Kec < Formula
   sha256 "f1962237ad5d67f324b0b5d8ba2ef873fbac707225dda9fc8726fcf398f5eed1"
   license "BSD-2-Clause"
 
-  depends_on "kec"
-
   def install
-    bin.install "kec"
+    bin.install "bin/kec"
   end
 end
