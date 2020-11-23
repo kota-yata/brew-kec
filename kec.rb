@@ -6,9 +6,6 @@ class Kec < Formula
   license "BSD-2-Clause"
 
   def install
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}.tar.gz"
+    bin.install "kec"
   end
 end
